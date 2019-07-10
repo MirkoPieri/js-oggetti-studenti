@@ -6,12 +6,16 @@
 
 var elemento = document.getElementById('mio_id');
 var elemento1 = document.getElementById('mio_id1');
+var elemento2 = document.getElementById('mio_id2');
 
-var si = s, no = n;
+// variabili per scelta utente se aggiungere o meno un nuovo studente
+var si = "s", no = "n";
 
-si.toUpperCase();
-si.toUpperCase();
 
+var siMaiusc = si.toUpperCase();
+var noMaiusc = no.toUpperCase();
+
+// primo array ogetto
 var studente1 = {
   "nome": "Giuseppe",
   "cognome": "Rossi",
@@ -20,12 +24,15 @@ var studente1 = {
 
 var text = "";
 
+// ciclo per stampa array oggetto
 for (var x in studente1) {
   text += studente1[x] + " ";
   elemento.innerHTML ="Alunno: " + text;
 }
 
 
+// seconda parte esercizio
+// creazione array con al suo interno array oggetto
 var studente2 = {
   "nome": "Mario",
   "cognome": "Bianchi",
@@ -50,21 +57,37 @@ var studente5 = {
   "età": 20
 };
 
+// creazione array con al suo interno altri array oggetto
 var studenti = [studente2, studente3, studente4, studente5];
 console.log(studenti);
 
-var text2 = "";
+// stampa dei vari array
+var text = "";
 for (var i = 0; i < studenti.length; i++) {
-  text2 += "<li>" + studenti[i].nome + " " + studenti[i].cognome + "</li>";
-  elemento1.innerHTML = text2;
+  text += "<li>" + studenti[i].nome + " " + studenti[i].cognome + "</li>";
+  elemento1.innerHTML = text;
 }
 
-
+// scelta utente se aggiungere nuovo studente
 inserimento = prompt("Vuoi inserire un nuovo utente? s/n")
-inserimento.toUpperCase();
+var inserimentoMaiusc = inserimento.toUpperCase();
 
-if (inserimento == si) {
+// if per inserimento o meno del nuovo studente
+if (inserimentoMaiusc == siMaiusc) {
+  var studente6 = {};
+  studenti.push(studente6);
   var nome = prompt("Inserisci il nome dello studente");
   var cognome = prompt("Inserisci il cognome dello studente");
-  var eta = prompt("Inserisci l'età dello studente");
+  var eta = parseInt(prompt("Inserisci l'età dello studente"));
+  studente6.nome = nome;
+  studente6.cognome = cognome;
+  studente6.età = eta;
+  console.log(studenti);
+
+  // stampa del nuovo array aggiornato
+  var text = "";
+  for (var i = 0; i < studenti.length; i++) {
+    text += "<li>" + studenti[i].nome + " " + studenti[i].cognome + "</li>";
+    elemento2.innerHTML = text;
+  }
 }
