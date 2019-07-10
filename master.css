@@ -1,0 +1,37 @@
+span {
+  display: block;
+  margin: 20px;
+  font-weight: bold;
+}
+
+ol {
+  margin: 10px 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+header, footer {
+  height: 100px;
+  background: black;
+}
+
+header h1 {
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.general {
+  height: calc(100vh - 200px);
+}
+
+.general #two {
+  padding-top: 100px;
+}
