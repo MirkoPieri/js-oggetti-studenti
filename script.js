@@ -69,25 +69,30 @@ for (var i = 0; i < studenti.length; i++) {
 }
 
 // scelta utente se aggiungere nuovo studente
-inserimento = prompt("Vuoi inserire un nuovo utente? s/n")
-var inserimentoMaiusc = inserimento.toUpperCase();
+var z = true;
+while (z == true) {
+  inserimento = prompt("Vuoi inserire un nuovo utente? s/n")
+  var inserimentoMaiusc = inserimento.toUpperCase();
 
-// if per inserimento o meno del nuovo studente
-if (inserimentoMaiusc == siMaiusc) {
-  var studente6 = {};
-  studenti.push(studente6);
-  var nome = prompt("Inserisci il nome dello studente");
-  var cognome = prompt("Inserisci il cognome dello studente");
-  var eta = parseInt(prompt("Inserisci l'età dello studente"));
-  studente6.nome = nome;
-  studente6.cognome = cognome;
-  studente6.età = eta;
-  console.log(studenti);
+  // if per inserimento o meno del nuovo studente
+  if (inserimentoMaiusc == siMaiusc) {
+    var studente6 = {};
+    studenti.push(studente6);
+    var nome = prompt("Inserisci il nome dello studente");
+    var cognome = prompt("Inserisci il cognome dello studente");
+    var eta = parseInt(prompt("Inserisci l'età dello studente"));
+    studente6.nome = nome;
+    studente6.cognome = cognome;
+    studente6.età = eta;
+    console.log(studenti);
 
-  // stampa del nuovo array aggiornato
-  var text = "";
-  for (var i = 0; i < studenti.length; i++) {
-    text += "<li>" + studenti[i].nome + " " + studenti[i].cognome + "</li>";
-    elemento2.innerHTML = text;
+    // stampa del nuovo array aggiornato
+    var text = "";
+    for (var i = 0; i < studenti.length; i++) {
+      text += "<li>" + studenti[i].nome + " " + studenti[i].cognome + "</li>";
+      elemento2.innerHTML = text;
+    }
+  } else {
+    z = false;
   }
 }
